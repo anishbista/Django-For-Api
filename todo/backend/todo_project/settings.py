@@ -68,6 +68,8 @@ CORS_ORIGIN_WHITELIST = (
     "http://localhost:8000",
 )
 
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
+
 # CORS requires the server to include specific HTTP headers that allow for the client to determine if and when cross-domain requests should be allowed.
 
 ROOT_URLCONF = "todo_project.urls"
