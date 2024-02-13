@@ -36,11 +36,12 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
-    #3rd party
+    # 3rd party
     "rest_framework",
-    'corsheaders',
-    #Local
+    "corsheaders",
+    # Local
     "todos",
 ]
 
@@ -53,7 +54,8 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    'corsheaders.middleware.CorsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -62,8 +64,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = (
-'http://localhost:3000',
-'http://localhost:8000',
+    "http://localhost:3000",
+    "http://localhost:8000",
 )
 
 # CORS requires the server to include specific HTTP headers that allow for the client to determine if and when cross-domain requests should be allowed.
